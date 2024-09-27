@@ -1,0 +1,1 @@
+SELECT orders.employee_id, last_name, count(order_id) AS total_late_orders FROM orders JOIN employees ON employees.employee_id = orders.employee_id WHERE shipped_date >= required_date GROUP BY 1, 2 ORDER BY 3 DESC;
